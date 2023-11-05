@@ -17,7 +17,6 @@ import instagram from "../images/social/instagram.svg";
 <Layout title="Damita K.N">
   <main>
     <h1><span class="text-gradient">Damita K.N</span></h1>
-
     <div class="intro">
       <Image src={avatar} alt="temp" height="256" />
       <div id="avatar-text">
@@ -29,7 +28,6 @@ import instagram from "../images/social/instagram.svg";
         </ul>
       </div>
     </div>
-
     <ul role="list" class="link-card-grid">
       <li class="link-card">
         <div>
@@ -42,32 +40,32 @@ import instagram from "../images/social/instagram.svg";
         <div id="socials">
           <Socials
             icon={youtube}
-            alt="Youtube"
+            alt="Youtube Logo"
             href="https://www.youtube.com/c/DamitaKN"
           />
           <Socials
             icon={patreon}
-            alt="Patreon"
+            alt="Patreon Logo"
             href="https://www.patreon.com/damitakn"
           />
           <Socials
             icon={instagram}
-            alt="Instagram"
+            alt="Instagram Logo"
             href="https://www.instagram.com/damita_k.n/"
           />
           <Socials
             icon={tumblr}
-            alt="Tumblr"
+            alt="Tumblr Logo"
             href="https://damita-kn.tumblr.com/"
           />
           <Socials
             icon={toyhouse}
-            alt="Toyhouse"
+            alt="Toyhouse Logo"
             href="https://toyhou.se/Damita_KN/characters"
           />
           <Socials
             icon={twitter}
-            alt="Twitter"
+            alt="Twitter Logo"
             href="https://twitter.com/Damita_kn"
           />
         </div>
@@ -93,6 +91,21 @@ import instagram from "../images/social/instagram.svg";
     text-align: center;
     margin-bottom: 1em;
   }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  img {
+    border-radius: 100%;
+    padding: 1em;
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  a > h1 {
+    margin: 0;
+  }
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -114,17 +127,6 @@ import instagram from "../images/social/instagram.svg";
     align-items: center;
     justify-content: center;
   }
-
-  #avatar-text > h1 {
-    margin: 0;
-  }
-
-  #socials {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
   .link-card-grid {
     display: flex;
     flex-direction: column;
@@ -143,10 +145,6 @@ import instagram from "../images/social/instagram.svg";
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
-  a {
-    text-decoration: none;
-    color: white;
-  }
   .link-card > div {
     width: 100%;
     text-decoration: none;
@@ -157,28 +155,21 @@ import instagram from "../images/social/instagram.svg";
     background-color: #23262d;
     opacity: 0.8;
   }
-  a > h1 {
+  #avatar-text > h1 {
     margin: 0;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #socials {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
   @media screen and (max-width: 640px) {
     a > h1 {
       font-size: 3rem;
     }
   }
-  img {
-    border-radius: 100%;
-    padding: 1em;
-  }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-  }
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
     background-image: var(--accent-gradient);
-  }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent-light));
   }
 </style>
