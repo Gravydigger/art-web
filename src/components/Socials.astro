@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  icon: ImageMetadata;
+  alt: string;
+  href: string;
+}
+
+const { icon, alt, href } = Astro.props;
+---
+
+<div class="social">
+  <a href={href}>
+    <div>
+      <Image src={icon} alt={alt} height="34" format="png" />
+    </div>
+  </a>
+</div>
+<style>
+  p {
+    margin: 0;
+    font-weight: bold;
+  }
+  .social {
+    display: inline-block;
+  }
+
+  a:hover > div {
+    background-color: rgba(var(--accent-light), 100%);
+  }
+
+  a > div {
+    background-color: rgba(var(--accent), 100%);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.1em;
+    width: 3.1em;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .social {
+      padding: 0.5em;
+    }
+  }
+  
+  div > img {
+    padding: 0.5em;
+  }
+</style>
