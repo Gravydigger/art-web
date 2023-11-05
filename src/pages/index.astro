@@ -12,6 +12,9 @@ import youtube from "../images/social/youtube.png";
 import patreon from "../images/social/patreon.svg";
 import toyhouse from "../images/social/toyhouse.svg";
 import instagram from "../images/social/instagram.svg";
+
+import rocket from "../images/rocket-solid.svg";
+import terminal from "../images/terminal-solid.svg";
 ---
 
 <Layout title="Damita K.N">
@@ -71,6 +74,10 @@ import instagram from "../images/social/instagram.svg";
         </div>
       </li>
     </ul>
+    <div id="credit">
+      <a href="https://gravydigger.net/" title="Coded by Gravydigger">🐺</a>
+      <a href="https://astro.build/" title="Build with Astro">🚀</a>
+    </div>
   </main>
 </Layout>
 
@@ -157,6 +164,18 @@ import instagram from "../images/social/instagram.svg";
   }
   #avatar-text > h1 {
     margin: 0;
+  }
+  #credit {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 1px;
+    background-color: #23262d;
+    background-image: none;
+    border-radius: 7px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  #credit > a {
+    padding: 0.1em;
   }
   #socials {
     display: flex;
