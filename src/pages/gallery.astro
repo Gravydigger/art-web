@@ -53,6 +53,7 @@ const images = await Astro.glob("/src/images/gallery/*");
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    opacity: 0.8;
   }
   a {
     text-decoration: none;
@@ -67,7 +68,6 @@ const images = await Astro.glob("/src/images/gallery/*");
     margin: 0;
     padding-bottom: 0.5em;
   }
-
   .gallery-image {
     display: flex;
     flex-wrap: wrap;
@@ -127,10 +127,6 @@ const images = await Astro.glob("/src/images/gallery/*");
     border-radius: 8px;
     color: white;
     background-color: #23262d;
-    opacity: 0.8;
-  }
-  #avatar-text > h1 {
-    margin: 0;
   }
   /* The Modal (background) */
   .modal {

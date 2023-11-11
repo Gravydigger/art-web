@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  title: string;
+  price: string;
+  description: string;
+  image1: ImageMetadata;
+  image2: ImageMetadata;
+  image3: ImageMetadata;
+}
+
+const { title, price, description, image1, image2, image3 } = Astro.props;
+---
+
+<hr />
+<li class="commission">
+  <div class="images">
+    <Image src={image1} alt="" />
+    <Image src={image2} alt="" />
+    <Image src={image3} alt="" />
+  </div>
+  <div class="description">
+    <h1>{title}</h1>
+    <h2>{price}</h2>
+    <p>{description}</p>
+  </div>
+</li>
+<style>
+  h1 {
+    margin: 0.5em;
+  }
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .commission {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0;
+  }
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: calc((100% - 2rem) / 2);
+  }
+  .images img {
+    position: relative;
+    object-fit: cover;
+    flex: 1 100px;
+    max-width: 100%;
+    height: 10em;
+    vertical-align: middle;
+    border-radius: 5px;
+    padding: 0;
+  }
+  .description {
+    width: calc((100% - 2rem) / 2);
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Buttons from "../components/Buttons.astro";
+import Comms from "../components/Comms.astro";
+
+
+import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
+---
+
+<Layout title="Damita K.N">
+  <main>
+    <div class="nav-bar">
+      <Buttons text="Commissions" href="./commissions" />
+      <Buttons text="Gallery" href="./gallery" />
+    </div>
+    <div class="link-card-grid">
+      <div class="link-card">
+        <div>
+          <Comms title="Sketch" price="Head $10 | Half $15 | Full $20" description="Add more characters: +5$ per character\nBackground complexity: +$5 - $100\nTransparent/flat color background is free" image1={headshot} image2={headshot} image3={headshot}/>
+          <Comms title="Full Colour" price="Head $20 | Half $30 | Full $40" description="Add more characters: +5$ per character\nBackground complexity: +$5 - $100\nTransparent/flat color background is free" image1={headshot} image2={headshot} image3={headshot}/>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 0;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h2 {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    opacity: 0.8;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .nav-bar {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  .link-card-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  .link-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    background-color: #23262d;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 7px;
+    background-position: 100%;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  .link-card > div {
+    margin: 0;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 8px;
+    color: white;
+    background-color: #23262d;
+  }
+</style>
