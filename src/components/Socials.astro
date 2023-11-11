@@ -25,11 +25,9 @@ const { icon, alt, href } = Astro.props;
   .social {
     display: inline-block;
   }
-
-  a:hover > div {
+  a:is(:hover, :focus-within) > div {
     background-color: rgba(var(--accent-light), 100%);
   }
-
   a > div {
     background-color: rgba(var(--accent), 100%);
     border-radius: 100%;
@@ -39,13 +37,13 @@ const { icon, alt, href } = Astro.props;
     height: 3.1em;
     width: 3.1em;
   }
-  
+
   @media screen and (max-width: 640px) {
     .social {
       padding: 0.5em;
     }
   }
-  
+
   div > img {
     padding: 0.5em;
   }
