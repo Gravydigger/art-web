@@ -4,12 +4,14 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Buttons from "../components/Buttons.astro";
 import Comms from "../components/Comms.astro";
+import Modal from "../components/Modal.astro";
 
-
-import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
+import headshot1 from "../images/gallery/Ninten_Draw_3rd_place.png";
+import headshot2 from "../images/gallery/iota.png";
+import headshot3 from "../images/gallery/gir_hoodie.png";
 ---
 
-<Layout title="Damita K.N">
+<Layout title="Damita K.N - Commissions" header="Damita K.N">
   <main>
     <div class="nav-bar">
       <Buttons text="Commissions" href="./commissions" />
@@ -18,11 +20,37 @@ import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
     <div class="link-card-grid">
       <div class="link-card">
         <div>
-          <Comms title="Sketch" price="Head $10 | Half $15 | Full $20" description="Add more characters: +5$ per character\nBackground complexity: +$5 - $100\nTransparent/flat color background is free" image1={headshot} image2={headshot} image3={headshot}/>
-          <Comms title="Full Colour" price="Head $20 | Half $30 | Full $40" description="Add more characters: +5$ per character\nBackground complexity: +$5 - $100\nTransparent/flat color background is free" image1={headshot} image2={headshot} image3={headshot}/>
+          <h1>Sketches</h1>
+          <hr />
+          <ul class="images">
+            <Comms text="Bust" price="$10" image={headshot1} />
+            <Comms text="Half" price="$15" image={headshot2} />
+            <Comms text="Full" price="$20" image={headshot3} />
+          </ul>
+          <ul>
+            <li>Additional Character +$5</li>
+            <li>Flat color / Transparent background is free</li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-card">
+        <div>
+          <h1>Colored</h1>
+          <hr />
+          <ul class="images">
+            <Comms text="Bust" price="$20" image={headshot1} />
+            <Comms text="Half" price="$30" image={headshot1} />
+            <Comms text="Full" price="$40" image={headshot1} />
+          </ul>
+          <ul>
+            <li>Additional Character +$5</li>
+            <li>Flat color / Transparent background is free</li>
+            <li>Complex background: +$5 to $100 depending on the complexity</li>
+          </ul>
         </div>
       </div>
     </div>
+    <Modal />
   </main>
 </Layout>
 
@@ -36,21 +64,32 @@ import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
     font-size: 20px;
     line-height: 1.6;
   }
-  h2 {
+  h1 {
     font-size: 3em;
     font-weight: 700;
     line-height: 1;
     text-align: center;
-    margin-bottom: 1em;
+    margin: 0 0 0.5em 0;
     opacity: 0.8;
   }
   a {
     text-decoration: none;
     color: white;
   }
+  hr {
+    opacity: 0.8;
+  }
   p {
     margin-top: 0.5rem;
     margin-bottom: 0;
+  }
+  ul {
+    opacity: 0.8;
+  }
+  .images {
+    display: flex;
+    padding: 0;
+    gap: 1em;
   }
   .nav-bar {
     margin-bottom: 2rem;
@@ -70,6 +109,7 @@ import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
     flex-direction: column;
     padding: 0;
     margin: 1rem 0;
+    gap: 1em;
   }
   .link-card {
     display: flex;
@@ -90,5 +130,11 @@ import headshot from "../images/gallery/Ninten_Draw_3rd_place.png";
     border-radius: 8px;
     color: white;
     background-color: #23262d;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .images {
+      flex-direction: column;
+    }
   }
 </style>

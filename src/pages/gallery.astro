@@ -3,11 +3,12 @@ import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
 import Buttons from "../components/Buttons.astro";
+import Modal from "../components/Modal.astro";
 
 const images = await Astro.glob("/src/images/gallery/*");
 ---
 
-<Layout title="Damita K.N">
+<Layout title="Damita K.N - Gallery" header="Damita K.N">
   <main>
     <div class="nav-bar">
       <Buttons text="Commissions" href="./commissions" />
@@ -29,11 +30,7 @@ const images = await Astro.glob("/src/images/gallery/*");
         </div>
       </div>
     </div>
-    <div class="modal">
-      <span class="close" tabindex="1">&times;</span>
-      <img class="modal-content" alt="" />
-    </div>
-    <script src="../scripts/gallery.js"></script>
+    <Modal />
   </main>
 </Layout>
 
@@ -127,68 +124,5 @@ const images = await Astro.glob("/src/images/gallery/*");
     border-radius: 8px;
     color: white;
     background-color: #23262d;
-  }
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-  }
-
-  /* Modal Content (image) */
-  .modal-content {
-    margin: auto;
-    width: 80%;
-    max-width: 700px;
-    border-radius: 10%;
-    overflow: auto; /* Enable scroll if needed */
-  }
-
-  /* Add Animation */
-  .modal-content {
-    animation-name: zoom;
-    animation-duration: 0.2s;
-  }
-
-  @keyframes zoom {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-
-  /* The Close Button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px) {
-    .modal-content {
-      width: 100%;
-      margin: auto 0.5em;
-    }
   }
 </style>

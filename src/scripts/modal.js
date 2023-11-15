@@ -1,9 +1,14 @@
-const images = document.querySelectorAll(".image");
+// const images = document.querySelectorAll(".image");
+const images = document.querySelectorAll("img");
 const modal = document.getElementsByClassName("modal")[0];
 const close = document.getElementsByClassName("close")[0];
 const body = document.getElementsByTagName("body")[0];
 
 images.forEach((image) => {
+  
+  if (image.className == "modal-content")
+    return;
+  
   image.addEventListener("click", (event) => {
     displayModal(event);
   });
