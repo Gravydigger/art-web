@@ -24,12 +24,6 @@ modal.onclick = function () {
   hideModal();
 };
 
-// document.onkeydown = function (e) {
-//   if (e.repeat) {
-//     hideModal();
-//   }
-// };
-
 function hideModal() {
   modal.style.display = "none";
   body.style.overflow = "auto";

@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="Damita K.N - Terms of Service" header="Damita K.N">
+  <main>
+    <Navbar />
+    <div class="link-card-grid">
+      <div class="link-card">
+        <div>
+          <h1 class="header">Terms of Service</h1>
+          <hr />
+          <h2 class="header">Payment</h2>
+          <ul>
+            <li>
+              I require payment up front before I begin work on your piece.
+            </li>
+            <li>Payments must be made through PayPay only!</li>
+          </ul>
+          <hr />
+          <h2 class="header">Artwork</h2>
+          <h3 class="header">I will Draw</h3>
+          <ul>
+            <li>Original Characters</li>
+            <li>Custom Commissions</li>
+            <li>Humanoids</li>
+            <li>Anthros</li>
+            <li>Ferals</li>
+          </ul>
+          <h3 class="header">I will <strong>NOT</strong> Draw</h3>
+          <ul>
+            <li>Problematic artwork (Rasist, Sexist, etc.)</li>
+            <li>Suggestive Artwork</li>
+            <li>Fetishes</li>
+            <li>NSFW</li>
+          </ul>
+          <hr />
+          <h2 class="header">Contact</h2>
+          <p>
+            If you have more question or want to commission me, please contact
+            me through my <a href="https://www.instagram.com/damita_k.n/"
+              >Instagram</a
+            >, <a href="https://twitter.com/Damita_kn">Twitter</a> or Discord
+            (damita_k.n)!
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 0;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 0.5em 0;
+  }
+  a {
+    text-decoration: underline;
+    color: white;
+  }
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .header {
+    text-align: center;
+  }
+  .link-card-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 1rem 0;
+    gap: 1em;
+  }
+  .link-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+    background-color: #23262d;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 7px;
+    background-position: 100%;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  .link-card > div {
+    margin: 0;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 8px;
+    color: white;
+    background-color: #23262d;
+    opacity: 0.8;
+  }
+
+  a:is(:hover, :focus-within) {
+    color: rgba(var(--accent), 1);
+  }
+</style>

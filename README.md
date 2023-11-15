@@ -1,3 +1,3 @@
-Hours of work: 4.5 + 8 
+Hours of work: 15
 
-12:40pm 1:50pm
+4:40pm

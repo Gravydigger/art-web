@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import Buttons from "../components/Buttons.astro";
+import Navbar from "../components/Navbar.astro";
 import Comms from "../components/Comms.astro";
 import Modal from "../components/Modal.astro";
 
@@ -13,10 +13,7 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
 
 <Layout title="Damita K.N - Commissions" header="Damita K.N">
   <main>
-    <div class="nav-bar">
-      <Buttons text="Commissions" href="./commissions" />
-      <Buttons text="Gallery" href="./gallery" />
-    </div>
+    <Navbar />
     <div class="link-card-grid">
       <div class="link-card">
         <div>
@@ -90,19 +87,6 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
     display: flex;
     padding: 0;
     gap: 1em;
-  }
-  .nav-bar {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
   }
   .link-card-grid {
     display: flex;

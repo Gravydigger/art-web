@@ -1,19 +1,29 @@
 ---
-export interface Props {
-  text: string;
-  href: string;
-}
 
-const { text, href } = Astro.props;
 ---
-
-<div class="nav-button">
-  <a href={href}>
-    <div>
-      <h2>{text}</h2>
-    </div>
-  </a>
-</div>
+<nav class="nav-bar">
+  <div class="nav-button">
+    <a href="./commissions">
+      <div>
+        <h2>Commissions</h2>
+      </div>
+    </a>
+  </div>
+  <div class="nav-button">
+    <a href="./gallery">
+      <div>
+        <h2>Gallery</h2>
+      </div>
+    </a>
+  </div>
+  <div class="nav-button">
+    <a href="./tos">
+      <div>
+        <h2>Terms of Service</h2>
+      </div>
+    </a>
+  </div>
+</nav>
 
 <style>
   h2 {
@@ -26,7 +36,19 @@ const { text, href } = Astro.props;
   a {
     width: 11em;
   }
-
+  .nav-bar {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
   .nav-button {
     margin: 1em;
     list-style: none;
@@ -40,14 +62,13 @@ const { text, href } = Astro.props;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
-  .nav-button > div {
+  .nav-button > a {
     text-decoration: none;
     line-height: 1.4;
-    padding: calc(1.5rem - 1px);
-    border-radius: 8px;
-    color: white;
-    background-color: #23262d;
     opacity: 0.8;
+    display: flex;
+    align-self: center;
+    justify-content: center;
   }
 
   .nav-button:is(:hover, :focus-within) {

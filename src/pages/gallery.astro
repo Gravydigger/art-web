@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import Buttons from "../components/Buttons.astro";
+import Navbar from "../components/Navbar.astro";
 import Modal from "../components/Modal.astro";
 
 const images = await Astro.glob("/src/images/gallery/*");
@@ -10,10 +10,7 @@ const images = await Astro.glob("/src/images/gallery/*");
 
 <Layout title="Damita K.N - Gallery" header="Damita K.N">
   <main>
-    <div class="nav-bar">
-      <Buttons text="Commissions" href="./commissions" />
-      <Buttons text="Gallery" href="./gallery" />
-    </div>
+    <Navbar />
     <div class="link-card-grid">
       <div class="link-card">
         <div>
@@ -22,7 +19,12 @@ const images = await Astro.glob("/src/images/gallery/*");
             {
               images.map((image) => (
                 <li>
-                  <Image src={image.default} alt="Gallery Image" format="webp" tabindex="0"/>
+                  <Image
+                    src={image.default}
+                    alt="Gallery Image"
+                    format="webp"
+                    tabindex="0"
+                  />
                 </li>
               ))
             }
@@ -84,19 +86,6 @@ const images = await Astro.glob("/src/images/gallery/*");
     height: 10em;
     vertical-align: middle;
     border-radius: 5px;
-    padding: 0;
-  }
-  .nav-bar {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    border-radius: 8px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 0;
   }
   .link-card-grid {
