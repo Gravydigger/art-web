@@ -21,8 +21,8 @@ const images = await Astro.glob("/src/images/gallery/*");
           <ul class="gallery-image">
             {
               images.map((image) => (
-                <li class="image" tabindex="2">
-                  <Image src={image.default} alt="" format="webp" />
+                <li>
+                  <Image src={image.default} alt="Gallery Image" format="webp" tabindex="0"/>
                 </li>
               ))
             }

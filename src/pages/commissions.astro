@@ -20,12 +20,12 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
     <div class="link-card-grid">
       <div class="link-card">
         <div>
-          <h1>Sketches</h1>
+          <h1>Art: Sketch</h1>
           <hr />
           <ul class="images">
-            <Comms text="Bust" price="$10" image={headshot1} />
-            <Comms text="Half" price="$15" image={headshot2} />
-            <Comms text="Full" price="$20" image={headshot3} />
+            <Comms text="Bust" price="$10" alt="Example of what a bust sketch drawing would look like" image={headshot1} />
+            <Comms text="Half" price="$15" alt="Example of what a haldbody sketch drawing would look like" image={headshot2} />
+            <Comms text="Full" price="$20" alt="Example of what a fullbody sketch drawing would look like" image={headshot3} />
           </ul>
           <ul>
             <li>Additional Character +$5</li>
@@ -35,12 +35,12 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
       </div>
       <div class="link-card">
         <div>
-          <h1>Colored</h1>
+          <h1>Art: Colored</h1>
           <hr />
           <ul class="images">
-            <Comms text="Bust" price="$20" image={headshot1} />
-            <Comms text="Half" price="$30" image={headshot1} />
-            <Comms text="Full" price="$40" image={headshot1} />
+            <Comms text="Bust" price="$20" alt="Example of what a bust colored drawing would look like" image={headshot1} />
+            <Comms text="Half" price="$30" alt="Example of what a bust colored drawing would look like" image={headshot1} />
+            <Comms text="Full" price="$40" alt="Example of what a bust colored drawing would look like" image={headshot1} />
           </ul>
           <ul>
             <li>Additional Character +$5</li>
@@ -131,7 +131,7 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
     color: white;
     background-color: #23262d;
   }
-  
+
   @media screen and (max-width: 640px) {
     .images {
       flex-direction: column;

@@ -4,10 +4,11 @@ import { Image } from "astro:assets";
 interface Props {
   text: string;
   price: string;
+  alt: string;
   image: ImageMetadata;
 }
 
-const { text, price, image } = Astro.props;
+const { text, price, alt, image } = Astro.props;
 ---
 
 <li class="commission">
@@ -17,7 +18,7 @@ const { text, price, image } = Astro.props;
     <h3>{price}</h3>
   </div>
   <div class="commission-image">
-    <Image src={image} alt="" format="webp"/>
+    <Image src={image} alt={alt} format="webp" tabindex="0"/>
   </div>
 </li>
 <style>
