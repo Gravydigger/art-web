@@ -3,11 +3,9 @@ import { Image } from "astro:assets";
 interface Props {
   text: string;
   price: string;
-  alt: string;
-  image: ImageMetadata;
 }
 
-const { text, price, alt, image } = Astro.props;
+const { text, price} = Astro.props;
 ---
 
 <li class="commission">
@@ -15,9 +13,6 @@ const { text, price, alt, image } = Astro.props;
     <h2>{text}</h2>
     <hr />
     <h3>{price}</h3>
-  </div>
-  <div class="commission-image">
-    <Image src={image} alt={alt} format="webp" tabindex="0"/>
   </div>
 </li>
 <style>
@@ -37,14 +32,7 @@ const { text, price, alt, image } = Astro.props;
   }
   .commission {
     list-style: none;
-  }
-  .commission-image img {
-    position: relative;
-    object-fit: cover;
-    max-width: 100%;
-    max-height: 10em;
-    border-radius: 1em;
-    padding: 0;
+    width: 6em;
   }
   .commission-text {
     text-align: center;

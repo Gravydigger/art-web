@@ -14,7 +14,8 @@ const images = await Astro.glob("/src/images/gallery/*");
     <div class="link-card-grid">
       <div class="link-card">
         <div>
-          <h2 id="gallery-header">Gallery</h2>
+          <h1 id="gallery-header">Gallery</h1>
+          <hr />
           <ul class="gallery-image">
             {
               images.map((image) => (
@@ -46,8 +47,7 @@ const images = await Astro.glob("/src/images/gallery/*");
     font-size: 20px;
     line-height: 1.6;
   }
-  h2 {
-    font-size: 3rem;
+  h1 {
     font-weight: 700;
     line-height: 1;
     text-align: center;

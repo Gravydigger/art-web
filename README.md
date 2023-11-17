@@ -1,3 +1,1 @@
-Hours of work: 15
-
-4:40pm
+Hours of work: 17 15 minutes

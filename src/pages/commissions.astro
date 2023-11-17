@@ -3,12 +3,16 @@ import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Comms from "../components/Comms.astro";
+import CommsImage from "../components/Comms.astro";
+import Comms from "../components/Comms-noImage.astro";
 import Modal from "../components/Modal.astro";
 
 import headshot1 from "../images/gallery/Ninten_Draw_3rd_place.png";
 import headshot2 from "../images/gallery/iota.png";
-import headshot3 from "../images/gallery/gir_hoodie.png";
+
+import FullSketch from "../images/comms/fullSketch.png";
+import Full from "../images/comms/full.png";
+
 ---
 
 <Layout title="Damita K.N - Commissions" header="Damita K.N">
@@ -20,9 +24,24 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
           <h1>Art: Sketch</h1>
           <hr />
           <ul class="images">
-            <Comms text="Bust" price="$10" alt="Example of what a bust sketch drawing would look like" image={headshot1} />
-            <Comms text="Half" price="$15" alt="Example of what a haldbody sketch drawing would look like" image={headshot2} />
-            <Comms text="Full" price="$20" alt="Example of what a fullbody sketch drawing would look like" image={headshot3} />
+            <CommsImage
+              text="Bust"
+              price="$10"
+              alt="Example of what a bust sketch drawing would look like"
+              image={headshot1}
+            />
+            <CommsImage
+              text="Half"
+              price="$15"
+              alt="Example of what a halfbody sketch drawing would look like"
+              image={headshot2}
+            />
+            <CommsImage
+              text="Full"
+              price="$20"
+              alt="Example of what a fullbody sketch drawing would look like"
+              image={FullSketch}
+            />
           </ul>
           <ul>
             <li>Additional Character +$5</li>
@@ -35,14 +54,71 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
           <h1>Art: Colored</h1>
           <hr />
           <ul class="images">
-            <Comms text="Bust" price="$20" alt="Example of what a bust colored drawing would look like" image={headshot1} />
-            <Comms text="Half" price="$30" alt="Example of what a bust colored drawing would look like" image={headshot1} />
-            <Comms text="Full" price="$40" alt="Example of what a bust colored drawing would look like" image={headshot1} />
+            <CommsImage
+              text="Bust"
+              price="$20"
+              alt="Example of what a bust colored drawing would look like"
+              image={headshot1}
+            />
+            <CommsImage
+              text="Half"
+              price="$30"
+              alt="Example of what a halfbody colored drawing would look like"
+              image={headshot1}
+            />
+            <CommsImage
+              text="Full"
+              price="$40"
+              alt="Example of what a fullbody colored drawing would look like"
+              image={Full}
+            />
           </ul>
           <ul>
             <li>Additional Character +$5</li>
             <li>Flat color / Transparent background is free</li>
             <li>Complex background: +$5 to $100 depending on the complexity</li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-card">
+        <div>
+          <h1>Animation: Tweening</h1>
+          <hr />
+          <ul class="images">
+            <Comms text="Bust" price="$25" />
+            <Comms text="Half" price="$50" />
+            <Comms text="Full" price="$75" />
+          </ul>
+          <h2 class="youtube-examples">
+            <a href="https://www.youtube.com/c/DamitaKN"
+              >Examples found on my Youtube Channel!</a>
+          </h2>
+          <ul>
+            <li>Additional Character +$20</li>
+            <li>Flat color / Transparent background is free</li>
+            <li>Complex background: +$5 to $100 depending on the complexity</li>
+            <li>For animation memes: cost is dependent on complexity</li>
+          </ul>
+        </div>
+      </div>
+      <div class="link-card">
+        <div>
+          <h1>Animation: Frame-by-Frame</h1>
+          <hr />
+          <ul class="images">
+            <Comms text="Bust" price="$45" />
+            <Comms text="Half" price="$70" />
+            <Comms text="Full" price="$95" />
+          </ul>
+          <h2 class="youtube-examples">
+            <a href="https://www.youtube.com/c/DamitaKN"
+              >Examples found on my Youtube Channel!</a>
+          </h2>
+          <ul>
+            <li>Additional Character +$30</li>
+            <li>Flat color / Transparent background is free</li>
+            <li>Complex background: +$5 to $100 depending on the complexity</li>
+            <li>For animation memes: cost is dependent on complexity</li>
           </ul>
         </div>
       </div>
@@ -87,6 +163,9 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
     display: flex;
     padding: 0;
     gap: 1em;
+    opacity: 1;
+    justify-content: space-evenly;
+    align-items: center;
   }
   .link-card-grid {
     display: flex;
@@ -115,7 +194,15 @@ import headshot3 from "../images/gallery/gir_hoodie.png";
     color: white;
     background-color: #23262d;
   }
-
+  .youtube-examples {
+    text-align: center;
+  }
+  .youtube-examples > a {
+    text-decoration: underline;
+  }
+  .youtube-examples > a:is(:hover, :focus-within) {
+    color: rgba(var(--accent), 1);
+  }
   @media screen and (max-width: 640px) {
     .images {
       flex-direction: column;
