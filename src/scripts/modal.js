@@ -18,6 +18,9 @@ images.forEach((image) => {
     
     displayModal(event);
   });
+  
+  image.style.cursor = "pointer";
+  
 });
 
 modal.onclick = function () {
