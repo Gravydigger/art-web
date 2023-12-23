@@ -1,1 +1,1 @@
-Hours of work: 17 15 minutes
+Hours of work: 18
